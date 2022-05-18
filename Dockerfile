@@ -20,9 +20,12 @@ RUN docker-php-ext-install \
     intl \ 
     gd \ 
     xsl \
-    bcmath \ 
+    bcmath \
+    pdo_mysql \
     pdo_pgsql \ 
     pgsql
+
+COPY php.ini $PHP_INI_DIR/conf.d/
 
 # Set timezone
 RUN rm /etc/localtime
